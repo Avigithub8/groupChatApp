@@ -1,10 +1,8 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const path = require("path");
-const mongoose = require('mongoose');
-require('./utils/db.js');
-const User = require('./models/user.js');
-//const authRoutes = require('./routes/auth');
+const db=require('./utils/db.js');
+const User = require('./models/users.js');
 const env = require("dotenv");
 env.config()
 
@@ -16,6 +14,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/public',express.static(path.join(__dirname,'public')));
+//app.use(express.static(__dirname,'public'));
 
 
 
@@ -29,7 +28,13 @@ app.get('/', (req, res) => {
  
 
 
- 
+db.sync()
+.then(() => {
+  console.log('Database synced');
+})
+.catch((error) => {
+  console.error('Error syncing database:', error);
+});
 
 
 const PORT = 5000;

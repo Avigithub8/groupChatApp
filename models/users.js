@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../utils/db.js');
 
-const User = sequelize.define('user', {
+const Users = sequelize.define('user', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -27,4 +27,4 @@ const User = sequelize.define('user', {
    
 });
 
-module.exports = User;
+module.exports = Users;
