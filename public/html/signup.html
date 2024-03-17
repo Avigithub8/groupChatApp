@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link  type="text/css" href="/css/styles.css"> -->
+    
     <title>Signup - Group Chat App</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <link  rel="stylesheet" href="../public/css/styles.css">
     <script type="text/javascript" src="../public/js/signup.js"></script>
     
 </head>
 <body>
     <main>
         <form class="signupForm" action="/user/signup" method="post">
+         <div class="form-group">
             <label for="name">Enter Name:</label>
             <input type="text" name="name" id="name" required>
-
+        </div>
+        <div class="form-group">
             <label for="email">Enter Email:</label>
             <input type="text" name="email" id="email" required>
+        </div>
+        <div class="form-group">
 
             <label for="number">Enter Phone Number:</label>
             <input type="number" name="number" id="number">
+        </div>
+        <div class="form-group">
 
             <label for="password">Enter Password:</label>
             <input type="password" name="password" id="password" required>
+        </div>
+       
 
             <input type="submit" value="Signup" id="signupBtn">
         </form>
