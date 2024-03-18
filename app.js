@@ -9,6 +9,7 @@ env.config()
 
 
 const userRoutes = require('./routes/userRoutes');
+const chatRoutes=require('./routes/chatRoutes');
 
 const app = express();
  
@@ -22,6 +23,7 @@ app.use('/public',express.static(path.join(__dirname,'public')));
 
 
 app.use("/user", userRoutes);
+app.use("/user", chatRoutes);
 
 
 app.get('/', (req, res) => { 

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       console.log('Login success:', response.data);
                       
                       console.log('Login success:====');
-                      //window.location.href = '/user/new.html'; 
+                      window.location.href = '/user/home.html'; 
                   } else {
                     showMessage(response.error.data.message)
                       console.error('Unexpected response status:', response.status);
